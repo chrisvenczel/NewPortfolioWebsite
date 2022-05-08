@@ -8,6 +8,8 @@
   --secondary-shadow: #BD9800;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
 /* Remove defaults */
 * {
   margin: 0;
@@ -15,8 +17,26 @@
   border: 0;
 }
 
-h3 {
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3 {
+  font-family: 'Secular One';
   color: var(--primary);
+  padding-bottom: 10px;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
 }
 
 a {
@@ -38,9 +58,15 @@ a:active {
   transform: translateY(1px);
 }
 
+p {
+  padding-bottom: 10px;
+  width: 500px;
+  line-height: 1.4em;
+}
+
 .main {
-  padding: 10px;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100vw;
   font-size: 1.5em;
   font-family: Trebuchet MS;
