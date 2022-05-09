@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import './Website.css';
+import './Earth.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 // This contains the entire website
-const Website = (): React.ReactNode => {
+const Earth = (): JSX.Element => {
 
   // Linearly maps value from the range (a..b) to (c..d)
   const mapRange = (value, a, b, c, d) => {
@@ -20,8 +20,7 @@ const Website = (): React.ReactNode => {
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    const sceneTexture = new THREE.TextureLoader().load('stars.jpg');
-    scene.background = sceneTexture;
+    scene.background = new THREE.Color(0x1b1b1b);
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector("#bg")
@@ -54,7 +53,7 @@ const Website = (): React.ReactNode => {
         randInRange(-200, 200),
         randInRange(-200, 200)
       );
-      scene.add(star);
+      //scene.add(star);
     }
 
     // Lighting
@@ -73,7 +72,7 @@ const Website = (): React.ReactNode => {
     const animate = () => {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
-      earth.rotation.y += 0.004;
+      earth.rotation.y += 0.008;
 
       controls.update();
     };
@@ -81,11 +80,7 @@ const Website = (): React.ReactNode => {
     animate();
   }, []);
 
-  return (
-    <div className="main">
-      <canvas id="bg" />
-    </div>
-  );
+  return (<canvas id="bg" />);
 }
 
-export default Website;
+export default Earth;

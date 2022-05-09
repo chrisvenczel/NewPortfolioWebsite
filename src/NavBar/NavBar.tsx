@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './NavBar.css';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 // This contains the entire website
-const NavBar = (): React.ReactNode => {
+const NavBar = (): JSX.Element => {
   return (
-    <div className="main">
-      <canvas id="bg" />
+    <div className="container">
     </div>
   );
 }

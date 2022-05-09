@@ -1,0 +1,6 @@
+.container {
+  position: absolute;
+  background-color: var(--menu-bar);
+  width: 100%;
+  height: 56px;
+}
