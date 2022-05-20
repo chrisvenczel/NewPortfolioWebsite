@@ -9,8 +9,16 @@ import NavBar from '../NavBar/NavBar.tsx';
 const Website = (): JSX.Element => {
   return (
     <div className="main">
-      <NavBar/>
-      <Earth />
+      <NavBar />
+      {/*<Earth />*/}
+      <div className="homePage">
+
+      </div>
+      <div id="footerText">
+        <span>to projects ⤵</span>
+      </div>
+      <div id="footerShadow"></div>
+      <div id="footerSpacer"></div>
     </div>
   );
 }
