@@ -45,13 +45,24 @@ a {
   user-select: none;
 }
 
-a:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-position: under;
+.logo:hover {
+  text-decoration-line: none;
+  transform: scale(1.02);
+
 }
 
-a:active {
+a:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-shadow: 2px 2px var(--background)
+}
+
+.aHover {
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+.logo:active, a:active {
   transform: translateY(1px);
 }
 
@@ -71,9 +82,13 @@ p {
   background-color: var(--background);
 }
 
-#footerSpacer {
+#copyright {
   width: 100%;
-  height: 80px;
+  height: 60px;
+  text-align: center;
+  color: #676767;
+  line-height: 60px;
+  font-size: 0.75em;
 }
 
 #footerShadow {
@@ -97,9 +112,29 @@ p {
   margin-bottom: 15px;
 }
 
-.homePage {
-  background-color: green;
-  width: 85%;
+.section {
+  width: 80%;
+  padding: 10px;
   margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.homeSection {
+  background-color: green;
+  height: 900px;
+}
+
+.projectsSection {
+  background-color: blue;
+  height: 1000px;
+}
+
+.aboutSection {
+  background-color: red;
+  height: 1000px;
+}
+
+.contactSection {
+  background-color: orange;
   height: 1000px;
 }
