@@ -51,10 +51,10 @@ const NavBar = (props): JSX.Element => {
       {!props.isMobile && (
         <div className={styles.desktopNav}>
           <div className={styles.container}>
-            <a ref={logo} className={styles.logo}><h1>Chris Venczel</h1></a>
-            <a ref={projects} className={styles.navlink}>projects</a>
-            <a ref={about} className={styles.navlink}>about</a>
-            <a ref={contact} className={styles.navlink} style={{ marginRight: 0 }}>contact</a>
+            <a href="#home" ref={logo} className={styles.logo}><h1>Chris Venczel</h1></a>
+            <a href="#projects" ref={projects} className={styles.navlink}>projects</a>
+            <a href="#about" ref={about} className={styles.navlink}>about</a>
+            <a href="#contact" ref={contact} className={styles.navlink} style={{ marginRight: 0 }}>contact</a>
           </div>
         </div>
       )}
@@ -67,7 +67,7 @@ const NavBar = (props): JSX.Element => {
                 <tr>
                   <td>
                     <a 
-                    href="page.html#homeA" 
+                    href="#home" 
                     className={styles.logo}
                     ref={logo}>
                       <h1>Chris Venczel</h1>
@@ -75,7 +75,7 @@ const NavBar = (props): JSX.Element => {
                   </td>
                   <td>
                     <a 
-                    href="page.html#projectsA" 
+                    href="#projects" 
                     className={styles.navlink}
                     ref={projects}>
                       projects
@@ -83,7 +83,7 @@ const NavBar = (props): JSX.Element => {
                   </td>
                   <td>
                     <a 
-                    href="page.html#aboutA" 
+                    href="#about" 
                     className={styles.navlink}
                     ref={about}>
                       about
@@ -91,7 +91,7 @@ const NavBar = (props): JSX.Element => {
                   </td>
                   <td>
                     <a
-                      href="page.html#contactA" className={styles.navlink}
+                      href="#contact" className={styles.navlink}
                       style={{ marginRight: 0 }}
                       ref={contact}>
                       contact

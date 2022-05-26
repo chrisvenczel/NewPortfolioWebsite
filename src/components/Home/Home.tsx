@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
-import './Earth.css';
+import React, { useEffect, useRef } from 'react';
+
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import styles from './Home.module.css';
+
 // This contains the entire website
-const Earth = (): JSX.Element => {
+const Home = (): JSX.Element => {
+
+  const section = useRef<HTMLDivElement>();
 
   // Linearly maps value from the range (a..b) to (c..d)
   const mapRange = (value, a, b, c, d) => {
@@ -18,16 +22,17 @@ const Earth = (): JSX.Element => {
     return Math.floor(mapRange(Math.random(), 0, 1, a, b));
   }
 
-  useEffect(() => {
+  const render = () => {
+    const w = section.current.clientWidth;
+    const h = section.current.clientHeight;
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1b1b1b);
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    scene.background = new THREE.Color(0x2E2C2C);
+    const camera = new THREE.PerspectiveCamera(65, w / h, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector("#bg")
+      canvas: document.querySelector("#canvas")
     });
-
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(w, h);
     camera.position.setZ(30);
 
     renderer.render(scene, camera);
@@ -61,12 +66,15 @@ const Earth = (): JSX.Element => {
     directionalLight.position.set(200, 100, 0);
     scene.add(directionalLight);
 
+    const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+    scene.add(ambientLight);
+
     // Helpers
     const lightHelper = new THREE.DirectionalLightHelper(directionalLight);
-    scene.add(lightHelper);
+    //scene.add(lightHelper);
     const gridHelper = new THREE.GridHelper(200, 50);
-    scene.add(gridHelper);
-    const controls = new OrbitControls(camera, renderer.domElement);
+    //scene.add(gridHelper);
+    //const controls = new OrbitControls(camera, renderer.domElement);
 
     // Loop
     const animate = () => {
@@ -74,13 +82,31 @@ const Earth = (): JSX.Element => {
       renderer.render(scene, camera);
       earth.rotation.y += 0.008;
 
-      controls.update();
+      //controls.update();
     };
 
     animate();
-  }, []);
+  }
 
-  return (<canvas id="bg" />);
+  useEffect(() => {
+    if (section.current) {
+      render();
+    }
+
+    window.addEventListener('resize', render);
+    return () => {
+      window.removeEventListener('resize', render);
+    };
+  }, [section]);
+
+  return (
+    <>
+      <div className="spacer" id="home" />
+      <div ref={section} className={`section ${styles.container}`}>
+        <canvas id="canvas" />
+      </div>
+    </>
+  );
 }
 
-export default Earth;
+export default Home;
