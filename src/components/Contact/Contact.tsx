@@ -18,7 +18,7 @@ const Contact = (props): JSX.Element => {
               </td>
               <td className={styles.link}>
                 <a href="mailto:christopher.venczel@outlook.com">
-                  christopher.venczel<p>@outlook.com</p>
+                  christopher.venczel<span>@outlook.com</span>
                 </a>
               </td>
             </tr>
@@ -30,7 +30,7 @@ const Contact = (props): JSX.Element => {
               </td>
               <td className={styles.link}>
                 <a target="blank_" href="https://www.github.com/chrisvenczel">
-                  github.com/<p>chrisvenczel</p>
+                  github.com/<span>chrisvenczel</span>
                 </a>
               </td>
             </tr>
@@ -42,7 +42,7 @@ const Contact = (props): JSX.Element => {
               </td>
               <td className={styles.link}>
                 <a target="blank_" href="https://www.linkedin.com/in/christopher-venczel">
-                  linkedin.com/in/<p>christopher-venczel</p>
+                  linkedin.com/in/<span>christopher-venczel</span>
                 </a>
               </td>
             </tr>

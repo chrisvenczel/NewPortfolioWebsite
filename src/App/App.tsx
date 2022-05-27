@@ -56,7 +56,7 @@ const Website = (): JSX.Element => {
     <MathJaxContext>
       <div className={`main ${isMobile ? "mobile" : ""}`}>
         <NavBar isMobile={isMobile} />
-        <Home />
+        {/*<Home />*/}
         <Projects isMobile={isMobile} />
         <About />
         <Contact />
