@@ -42,7 +42,7 @@
 
 .mobileNav .navlink {
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.3em;
 }
 
 .mobileNav a {
@@ -50,7 +50,7 @@
 }
 
 .mobileNav .logo>h1 {
-  font-size: 1.05em;
+  font-size: 1.3em;
   width: 100px;
   padding: 5px 5px 0px 5px;
   line-height: 1em;

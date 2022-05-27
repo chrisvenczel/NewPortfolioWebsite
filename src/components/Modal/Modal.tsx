@@ -17,6 +17,7 @@ const Modal = ({modalOpen, setModalOpen, isMobile, children}): JSX.Element => {
         document.documentElement.style.overflow = "auto";
       }}
       onRequestClose={() => setModalOpen(false)}
+      appElement={document.getElementById('root')}
     >
       <div onClick={() => setModalOpen(false)} className={styles.modalX}>✖</div>
       {children}

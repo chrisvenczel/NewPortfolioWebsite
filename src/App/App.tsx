@@ -54,7 +54,7 @@ const Website = (): JSX.Element => {
 
   return (
     <MathJaxContext>
-      <div className="main">
+      <div className={`main ${isMobile ? "mobile" : ""}`}>
         <NavBar isMobile={isMobile} />
         <Home />
         <Projects isMobile={isMobile} />
