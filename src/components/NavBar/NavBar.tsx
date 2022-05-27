@@ -25,6 +25,15 @@ const NavBar = (props): JSX.Element => {
     ];
 
     const currentSection = sections[sectionIn];
+    if (currentSection === projects.current) {
+      document.title = "Chris Venczel - Projects";
+    } else if (currentSection === about.current) {
+      document.title = "Chris Venczel - About";
+    } else if (currentSection === contact.current) {
+      document.title = "Chris Venczel - Contact";
+    } else {
+      document.title = "Chris Venczel";
+    }
     for (let i = 0; i < sections.length; i++) {
       const section = sections[i];
       if (section) {

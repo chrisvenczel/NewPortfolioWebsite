@@ -2,3 +2,4 @@
 // "import styles from './styles.scss' we mean to load a module (to look for a './styles.scss.d.ts'). 
 declare module '*.css';
 declare module '*.tsx';
+declare module '*.ts';

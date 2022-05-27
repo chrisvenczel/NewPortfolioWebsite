@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { MathJaxContext } from 'better-react-mathjax';
 
 import Home from '../components/Home/Home.tsx';
 import NavBar from '../components/NavBar/NavBar.tsx';
@@ -52,23 +53,25 @@ const Website = (): JSX.Element => {
   }
 
   return (
-    <div className="main">
-      <NavBar isMobile={isMobile} />
-      <Home />
-      <Projects />
-      <About />
-      <Contact />
-      <div id="copyright">
-        Copyright © 2022 Christopher Venczel.&nbsp;&nbsp;
-        MIT Licence
-      </div>
-      {viewToProjects && (
-        <div id="footerText">
-          <span>to projects ⤵</span>
+    <MathJaxContext>
+      <div className="main">
+        <NavBar isMobile={isMobile} />
+        <Home />
+        <Projects isMobile={isMobile} />
+        <About />
+        <Contact />
+        <div id="copyright">
+          Copyright © 2022 Christopher Venczel.&nbsp;&nbsp;
+          MIT Licence
         </div>
-      )}
-      <div id="footerShadow"></div>
-    </div>
+        {viewToProjects && (
+          <div id="footerText">
+            <span>to projects ⤵</span>
+          </div>
+        )}
+        <div id="footerShadow"></div>
+      </div>
+    </MathJaxContext>
   );
 }
 

@@ -1,9 +1,11 @@
 :root {
   --background: #2E2C2C;
+  --modalBackground: #323232;
   --menu-bar: #403E3D;
   --navbarH: 60px;
   --primary: #ED9100;
   --headers: #FF8D5C;
+  --subHeader: #FF6E30;
   --links: #EDBF00;
   --text: #F2F2F2;
 }
@@ -38,6 +40,10 @@ h2 {
 
 h3 {
   font-size: 1em;
+}
+
+.subHeader {
+  color: var(--subHeader);
 }
 
 a {

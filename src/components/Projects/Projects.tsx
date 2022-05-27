@@ -16,12 +16,14 @@ const Projects = (props): JSX.Element => {
           text="Explore the intricate and beautiful fractal known as the Mandelbrot set. 
           This famous set is known for it’s aesthetic appeal and complexity arising from simple rules."
           img="/Mandelbrot.png"
+          isMobile={props.isMobile}
         />
         <ProjectMenuItem
           title="The Butterfly Effect"
           text="The butterfly effect is small differences in initial conditions leading to large differences over time. 
           See the chaos the butterfly effect generates in this project using pendulums."
           img="/ButterflyEffect.png"
+          isMobile={props.isMobile}
         />
       </div>
     </>
