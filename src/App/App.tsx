@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MathJaxContext } from 'better-react-mathjax';
+import TypeMate from 'typemate';
 
 import Home from '../components/Home/Home.tsx';
 import NavBar from '../components/NavBar/NavBar.tsx';
@@ -11,6 +12,10 @@ import './global.css';
 
 // This contains the entire website
 const Website = (): JSX.Element => {
+
+  // Stops "orphan" words (single word lines ending paragraphs)
+  const typeMateInstance = new TypeMate();
+  typeMateInstance.apply();
 
   const [viewToProjects, setViewToProjects] = useState(true);
   const [isMobile, setIsMobile] = useState(false);

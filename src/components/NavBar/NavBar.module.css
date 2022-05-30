@@ -15,6 +15,7 @@
   width: 100%;
   height: var(--navbarH);
   background-color: var(--menu-bar);
+  z-index: 10;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
@@ -38,6 +39,7 @@
   background-color: var(--menu-bar);
   width: 100%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  z-index: 10;
 }
 
 .mobileNav .navlink:hover {

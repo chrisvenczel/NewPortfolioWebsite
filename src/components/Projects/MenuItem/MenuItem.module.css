@@ -2,13 +2,17 @@
   --projectMenuH: 230px;
 }
 
+.table h2, .table p {
+  padding-bottom: 0.25em;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
 }
 
 .table td {
-  padding: 18px 0px;
+  padding: 0.7em 0px;
   vertical-align: top;
 }
 

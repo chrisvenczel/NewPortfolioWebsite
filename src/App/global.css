@@ -32,7 +32,7 @@ html, body {
 h1, h2, h3 {
   font-family: 'Secular One';
   color: var(--headers);
-  padding-bottom: 10px;
+  padding-bottom: 0.4em;
 }
 
 h1 {
@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.15em;
 }
 
 h3 {
@@ -81,8 +81,8 @@ a:hover {
 }
 
 p {
-  padding-bottom: 10px;
-  line-height: 1.3em;
+  padding-bottom: 1em;
+  line-height: 1.35em;
 }
 
 .main {
@@ -134,7 +134,8 @@ p {
   max-width: 1000px;
   padding: 10px;
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
+  position: relative;
   /*border: 3px solid rgb(111, 111, 111);*/
 }
 
