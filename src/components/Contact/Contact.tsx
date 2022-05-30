@@ -3,6 +3,12 @@ import styles from './Contact.module.css';
 
 // The projects menu/section
 const Contact = (props): JSX.Element => {
+
+  const openInNewTab = (url) => {
+    console.log(url);
+    window.open(url, '_blank').focus();
+  }
+
   return (
     <>
       <div className="spacer" id="contact" />
@@ -16,8 +22,12 @@ const Contact = (props): JSX.Element => {
                   <img src="/Contact/email.png" />
                 </a>
               </td>
-              <td className={styles.link}>
-                <a href="mailto:christopher.venczel@outlook.com">
+              <td
+                onClick={() => {
+                  window.location.href = "mailto:christopher.venczel@outlook.com";
+                }}
+                className={styles.link}>
+                <a>
                   christopher.venczel<span>@outlook.com</span>
                 </a>
               </td>
@@ -28,8 +38,11 @@ const Contact = (props): JSX.Element => {
                   <img src="/Contact/github.png" />
                 </a>
               </td>
-              <td className={styles.link}>
-                <a target="blank_" href="https://www.github.com/chrisvenczel">
+              <td onClick={() => {
+                openInNewTab("https://www.github.com/chrisvenczel");
+              }}
+                className={styles.link}>
+                <a>
                   github.com/<span>chrisvenczel</span>
                 </a>
               </td>
@@ -40,8 +53,11 @@ const Contact = (props): JSX.Element => {
                   <img src="/Contact/linkedin.png" />
                 </a>
               </td>
-              <td className={styles.link}>
-                <a target="blank_" href="https://www.linkedin.com/in/christopher-venczel">
+              <td onClick={() => {
+                openInNewTab("https://www.linkedin.com/in/christopher-venczel");
+              }}
+                className={styles.link}>
+                <a>
                   linkedin.com/in/<span>christopher-venczel</span>
                 </a>
               </td>

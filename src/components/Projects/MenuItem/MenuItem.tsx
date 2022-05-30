@@ -1,12 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Modal from "../../Modal/Modal.tsx";
 
 import styles from './MenuItem.module.css';
 
-// This contains the entire website
 const ProjectMenuItem = (props): JSX.Element => {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const table = useRef<HTMLTableElement>();
+
+  const resizeImage = () => {
+    const cells = Array.from(Array.from(table.current.rows)[0].children);
+    const img = cells[0].children[0];
+    const textCell = cells[1];
+
+    // Add all heights of text content
+    const textCellContentH = Array.from(textCell.children).slice(0, 3).map(e => e.clientHeight).reduce((a, b) => a + b, 0);
+    (img as HTMLElement).style.height = (textCellContentH*1) + "px";
+  };
+
+  useEffect(() => {
+    resizeImage();
+    window.addEventListener('resize', resizeImage);
+
+    return () => {
+      window.removeEventListener('resize', resizeImage);
+    };
+  }, []);
 
   return (
     <>
@@ -29,11 +48,13 @@ const ProjectMenuItem = (props): JSX.Element => {
           {props.modalTechnicalTxt}
         </p>
       </Modal>
-      <table className={styles.table}>
+      <table ref={table} className={styles.table}>
         <tbody>
           <tr>
             <td className={styles.image}>
-              <img src={props.img} alt={props.title}/>
+              <div>
+                <img src={props.img} alt={props.title} />
+              </div>
             </td>
             <td className={styles.text}>
               <a><h2>{props.title}</h2></a>

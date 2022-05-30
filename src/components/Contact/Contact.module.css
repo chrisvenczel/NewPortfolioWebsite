@@ -1,9 +1,19 @@
+.container {
+  min-width: 330px;
+  max-width: 700px;
+  width: 70%;
+}
+
 .table {
   padding-top: 1em;
 }
 
 .table td {
   padding-bottom: 1.5em;
+}
+
+.table td:hover {
+  cursor: pointer;
 }
 
 .img {

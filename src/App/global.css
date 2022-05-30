@@ -24,6 +24,11 @@ html, body {
   height: 100%;
 }
 
+::selection {
+  background: var(--headers);
+  color: var(--menu-bar);
+}
+
 h1, h2, h3 {
   font-family: 'Secular One';
   color: var(--headers);
