@@ -1,35 +1,37 @@
-import React, { useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import styles from './Home.module.css';
 
-// This contains the entire website
-const Home = (): JSX.Element => {
+// This is the first page on the site
+const Home:FC = () => {
 
-  const section = useRef<HTMLDivElement>();
+  const section = useRef<HTMLDivElement>(null);
 
   // Linearly maps value from the range (a..b) to (c..d)
-  const mapRange = (value, a, b, c, d) => {
+  const mapRange = (value: number, a: number, b: number, c: number, d: number) => {
     // First map value from (a..b) to (0..1)
     value = (value - a) / (b - a);
     // Then map it from (0..1) to (c..d) and return it
     return c + value * (d - c);
   }
 
-  const randInRange = (a, b) => {
+  const randInRange = (a: number, b: number) => {
     return Math.floor(mapRange(Math.random(), 0, 1, a, b));
   }
 
   const render = () => {
+    if (!section.current) return;
+
     const w = section.current.clientWidth;
     const h = section.current.clientHeight;
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x2E2C2C);
     const camera = new THREE.PerspectiveCamera(65, w / h, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector("#canvas")
+      canvas: document.querySelector("#canvas") as HTMLCanvasElement
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(w, h);

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import styles from './About.module.css';
 
 // The projects menu/section
-const About = (props): JSX.Element => {
+const About:FC = () => {
   return (
     <>
       <div className="spacer" id="about" />

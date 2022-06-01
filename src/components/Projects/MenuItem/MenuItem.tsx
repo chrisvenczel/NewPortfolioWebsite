@@ -1,21 +1,32 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import Modal from "../../Modal/Modal.tsx";
 
 import styles from './MenuItem.module.css';
 
-const ProjectMenuItem = (props): JSX.Element => {
+interface MenuItemProps {
+  title: string,
+  text: string,
+  img: string,
+  modalMainTxt: string,
+  modalTechnicalTxt: string,
+  modalImg: string,
+  isMobile: boolean,
+}
+
+const ProjectMenuItem:FC<MenuItemProps> = (props) => {
 
   const [modalOpen, setModalOpen] = useState(false);
-  const table = useRef<HTMLTableElement>();
+  const table = useRef<HTMLTableElement>(null);
 
   const resizeImage = () => {
+    if (!table.current) return;
     const cells = Array.from(Array.from(table.current.rows)[0].children);
     const img = cells[0].children[0];
     const textCell = cells[1];
 
     // Add all heights of text content
     const textCellContentH = Array.from(textCell.children).slice(0, 3).map(e => e.clientHeight).reduce((a, b) => a + b, 0);
-    (img as HTMLElement).style.height = (textCellContentH*1) + "px";
+    (img as HTMLElement).style.height = (textCellContentH) + "px";
   };
 
   useEffect(() => {

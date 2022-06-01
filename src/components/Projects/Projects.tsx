@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import ProjectMenuItem from './MenuItem/MenuItem.tsx';
 import { MathJax } from 'better-react-mathjax';
 
 import styles from './Projects.module.css';
 
+interface ProjectsProps {
+  isMobile: boolean
+}
+
 // The projects menu/section
-const Projects = (props): JSX.Element => {
+const Projects: FC<ProjectsProps> = (props) => {
   return (
     <>
       <div className="spacer" id="projects" />
@@ -46,24 +50,6 @@ const Projects = (props): JSX.Element => {
           modalMainTxt={<></>}
           modalTechnicalTxt={<></>}
           modalImg={""}
-        />
-        <ProjectMenuItem
-          title="1"
-          text=""
-          img=""
-          isMobile={props.isMobile}
-          modalMainTxt={<></>}
-          modalTechnicalTxt={<></>}
-          modalImg={"/"}
-        />
-        <ProjectMenuItem
-          title="1"
-          text=""
-          img=""
-          isMobile={props.isMobile}
-          modalMainTxt={<></>}
-          modalTechnicalTxt={<></>}
-          modalImg={"/"}
         />
       </div>
     </>

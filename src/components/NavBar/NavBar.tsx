@@ -1,13 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import styles from './NavBar.module.css';
 
-// This contains the entire website
-const NavBar = (props): JSX.Element => {
+interface NavBarProps {
+  isMobile: boolean
+}
 
-  const logo = useRef();
-  const projects = useRef();
-  const about = useRef();
-  const contact = useRef();
+const NavBar: FC<NavBarProps> = (props) => {
+
+  const logo = useRef(null);
+  const projects = useRef(null);
+  const about = useRef(null);
+  const contact = useRef(null);
 
   // Highlight menu item based on page position
   const highlightMenuItem = () => {
@@ -17,8 +20,8 @@ const NavBar = (props): JSX.Element => {
       return rect.bottom < window.innerHeight * 0.3;
     });
     const sectionIn = sectionHeights.indexOf(false);
-    const sections : any[] = [
-      logo.current, 
+    const sections: any[] = [
+      logo.current,
       projects.current,
       about.current,
       contact.current
@@ -75,26 +78,26 @@ const NavBar = (props): JSX.Element => {
               <tbody>
                 <tr>
                   <td>
-                    <a 
-                    href="#home" 
-                    className={styles.logo}
-                    ref={logo}>
+                    <a
+                      href="#home"
+                      className={styles.logo}
+                      ref={logo}>
                       <h1>Chris Venczel</h1>
                     </a>
                   </td>
                   <td>
-                    <a 
-                    href="#projects" 
-                    className={styles.navlink}
-                    ref={projects}>
+                    <a
+                      href="#projects"
+                      className={styles.navlink}
+                      ref={projects}>
                       projects
                     </a>
                   </td>
                   <td>
-                    <a 
-                    href="#about" 
-                    className={styles.navlink}
-                    ref={about}>
+                    <a
+                      href="#about"
+                      className={styles.navlink}
+                      ref={about}>
                       about
                     </a>
                   </td>

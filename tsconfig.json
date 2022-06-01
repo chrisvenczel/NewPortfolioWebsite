@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "strict": true, // Enable all strict type checking options
+      "esModuleInterop": true,
+      "jsx": "react",
+    },
+    "exclude": ["node_modules", "build"] // *** The files to not type check ***
+  }
+  

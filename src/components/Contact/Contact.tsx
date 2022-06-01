@@ -1,37 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { FC } from 'react';
 import styles from './Contact.module.css';
 
 // The projects menu/section
-const Contact = (props): JSX.Element => {
+const Contact: FC = () => {
 
-  const section = useRef<HTMLDivElement>();
-
-  // Make the contact section have padding so it is centered vertically at max scroll
-  /*const resizeSection = () => {
-    const s = section.current;
-    const contentH = s.querySelector("table").clientHeight + s.querySelector("h1").clientHeight;
-    const paddingH = (window.screen.height-contentH)/6;
-    s.style.paddingBottom = paddingH + "px";
-  };*/
-
-  useEffect(() => {
-    /*resizeSection();
-    window.addEventListener('resize', resizeSection);
-
-    return () => {
-      window.removeEventListener('resize', resizeSection);
-    };*/
-  }, []);
-
-  const openInNewTab = (url) => {
-    console.log(url);
-    window.open(url, '_blank').focus();
+  const openInNewTab = (url: string) => {
+    window.open(url, '_blank')?.focus();
   }
 
   return (
     <>
       <div className="spacer" id="contact" />
-      <div ref={section} className={`section ${styles.container}`}>
+      <div className={`section ${styles.container}`}>
         <h1>Contact Info</h1>
         <table className={styles.table}>
           <tbody>

@@ -1,26 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import ReactModal from 'react-modal';
 import styles from './Modal.module.css';
 
-// This contains the entire website
-const Modal = ({modalOpen, setModalOpen, isMobile, children}): JSX.Element => {
+interface ModalProps {
+  isMobile: boolean,
+  modalOpen: boolean,
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  children: React.ReactNode
+}
+
+const Modal: FC<ModalProps> = (props) => {
 
   return (
     <ReactModal
-      isOpen={modalOpen}
+      isOpen={props.modalOpen}
       overlayClassName={styles.modalOverlay}
-      className={isMobile ? styles.modalContentMobile : styles.modalContent}
+      className={props.isMobile ? styles.modalContentMobile : styles.modalContent}
       onAfterOpen={() => {
         document.documentElement.style.overflow = "hidden";
       }}
       onAfterClose={() => {
         document.documentElement.style.overflow = "auto";
       }}
-      onRequestClose={() => setModalOpen(false)}
-      appElement={document.getElementById('root')}
+      onRequestClose={() => props.setModalOpen(false)}
+      appElement={document.getElementById('root') as HTMLElement}
     >
-      <div onClick={() => setModalOpen(false)} className={styles.modalX}>✖</div>
-      {children}
+      <div
+        onClick={() => props.setModalOpen(false)}
+        className={styles.modalX}>✖</div>
+      {props.children}
     </ReactModal>
   );
 }
