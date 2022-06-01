@@ -36,7 +36,7 @@ const ProjectMenuItem:FC<MenuItemProps> = (props) => {
     return () => {
       window.removeEventListener('resize', resizeImage);
     };
-  }, []);
+  }, [table.current]);
 
   return (
     <>

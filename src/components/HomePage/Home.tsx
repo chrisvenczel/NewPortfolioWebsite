@@ -92,10 +92,10 @@ const Home:FC = () => {
 
   useEffect(() => {
     if (section.current) {
-      render();
+      //render();
     }
 
-    window.addEventListener('resize', render);
+    //window.addEventListener('resize', render);
     return () => {
       window.removeEventListener('resize', render);
     };

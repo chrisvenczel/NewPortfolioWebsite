@@ -2,11 +2,12 @@ import React, { FC, useState, useEffect, useRef } from 'react';
 import { MathJaxContext } from 'better-react-mathjax';
 import TypeMate from 'typemate';
 
-import Home from '../components/Home/Home.tsx';
 import NavBar from '../components/NavBar/NavBar.tsx';
-import Projects from '../components/Projects/Projects.tsx';
-import About from '../components/About/About.tsx';
-import Contact from '../components/Contact/Contact.tsx';
+
+import Home from '../components/HomePage/Home.tsx';
+import Projects from '../components/ProjectsPage/Projects.tsx';
+import About from '../components/AboutPage/About.tsx';
+import Contact from '../components/ContactPage/Contact.tsx';
 
 import './global.css';
 
@@ -61,7 +62,7 @@ const Website:FC = () => {
     <MathJaxContext>
       <div className={`main ${isMobile ? "mobile" : ""}`}>
         <NavBar isMobile={isMobile} />
-        {/*<Home />*/}
+        <Home />
         <Projects isMobile={isMobile} />
         <About />
         <Contact />
