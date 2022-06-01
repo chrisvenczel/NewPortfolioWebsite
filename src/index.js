@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Website from './App/App.tsx';
+import EmptyPage from './Components/Main/Main.tsx';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Website />
+    <EmptyPage />
   </React.StrictMode>
 );
 

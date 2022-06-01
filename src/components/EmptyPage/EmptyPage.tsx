@@ -2,17 +2,18 @@ import React, { FC, useState, useEffect, useRef } from 'react';
 import { MathJaxContext } from 'better-react-mathjax';
 import TypeMate from 'typemate';
 
-import NavBar from '../components/NavBar/NavBar.tsx';
-
-import Home from '../components/HomePage/Home.tsx';
-import Projects from '../components/ProjectsPage/Projects.tsx';
-import About from '../components/AboutPage/About.tsx';
-import Contact from '../components/ContactPage/Contact.tsx';
+import NavBar from '../NavBar/NavBar.tsx';
 
 import './global.css';
+import { isPropertySignature } from 'typescript';
 
-// This contains the entire website
-const Website:FC = () => {
+interface EmptyPageProps {
+  children: React.ReactNode;
+}
+
+// An empty page with no contents, only a nav bar
+// This acts a container for web pages
+const EmptyPage:FC<EmptyPageProps> = (props) => {
 
   // Stops "orphan" words (single word lines ending paragraphs)
   const typeMateInstance = new TypeMate();
@@ -62,23 +63,10 @@ const Website:FC = () => {
     <MathJaxContext>
       <div className={`main ${isMobile ? "mobile" : ""}`}>
         <NavBar isMobile={isMobile} />
-        <Home />
-        <Projects isMobile={isMobile} />
-        <About />
-        <Contact />
-        <div id="copyright">
-          Copyright © 2022 Christopher Venczel.&nbsp;&nbsp;
-          MIT Licence
-        </div>
-        {viewToProjects && (
-          <div id="footerText">
-            <span>to projects ⤵</span>
-          </div>
-        )}
-        <div id="footerShadow"></div>
+        {props.children}
       </div>
     </MathJaxContext>
   );
 }
 
-export default Website;
+export default EmptyPage;
