@@ -37,9 +37,13 @@
 .mobileNav>.container {
   position: fixed;
   background-color: var(--menu-bar);
+  height: var(--navbarH);
   width: 100%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileNav .navlink:hover {
@@ -57,8 +61,7 @@
 
 .mobileNav .logo>h1 {
   font-size: 1.3em;
-  width: 100px;
-  padding: 5px 5px 0px 5px;
+  padding: 0px 15px;
   line-height: 1em;
   color: var(--primary);
 }
@@ -72,6 +75,7 @@
 .mobileNav>.container>table {
   width: 100%;
   padding-right: 5px;
+  height: 85%;
 }
 
 .mobileNav>.container>table td {

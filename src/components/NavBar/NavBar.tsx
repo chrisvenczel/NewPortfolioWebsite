@@ -29,11 +29,11 @@ const NavBar: FC<NavBarProps> = (props) => {
 
     const currentSection = sections[sectionIn];
     if (currentSection === projects.current) {
-      document.title = "Chris Venczel - Projects";
+      document.title = "Projects | Chris Venczel";
     } else if (currentSection === about.current) {
-      document.title = "Chris Venczel - About";
+      document.title = "About | Chris Venczel";
     } else if (currentSection === contact.current) {
-      document.title = "Chris Venczel - Contact";
+      document.title = "Contact | Chris Venczel";
     } else {
       document.title = "Chris Venczel";
     }
@@ -50,10 +50,11 @@ const NavBar: FC<NavBarProps> = (props) => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', highlightMenuItem);
+    const content = document.getElementById("pageContents") as HTMLDivElement;
+    content.addEventListener('scroll', highlightMenuItem);
 
     return () => {
-      window.removeEventListener('scroll', highlightMenuItem);
+      content.removeEventListener('scroll', highlightMenuItem);
     };
   }, []);
 

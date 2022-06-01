@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
-import Modal from "../../Modal/Modal.tsx";
+import Modal from "../../../Modal/Modal.tsx";
 
 import styles from './MenuItem.module.css';
 

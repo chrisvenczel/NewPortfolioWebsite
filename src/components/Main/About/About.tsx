@@ -8,11 +8,6 @@ const About:FC = () => {
       <div className="spacer" id="about" />
       <div className={`section ${styles.container}`}>
         <h1>About</h1>
-        <img
-          className={styles.img}
-          src={"/Mountains.png"}
-          alt={"About Image"}
-        />
         <h3 className="subHeader">Christopher Venczel</h3>
         <p>
           Hello and welcome to my portfolio website!
@@ -22,6 +17,11 @@ const About:FC = () => {
           are related to some of my interests including math, design and music.
           To learn more about my past work click <a>here</a>.
         </p>
+        <img
+          className={styles.img}
+          src={"/Mountains.png"}
+          alt={"About Image"}
+        />
         <h3 className="subHeader">The Website</h3>
         <p>
           This website is open source under the MIT licence and all the code can be 
