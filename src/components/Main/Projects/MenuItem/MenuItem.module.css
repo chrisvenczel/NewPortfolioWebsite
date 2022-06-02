@@ -36,12 +36,17 @@
   padding-left: 25px !important;
 }
 
+.text>p {
+  padding-bottom: 0.5em !important;
+}
+
 .text>a>h2 {
   color: var(--links);
+  padding-bottom: 0.1em;
 }
 
 .moreInfo {
-  padding-left: 2vw;
+  margin-left: 0.6em;
 }
 
 .modalP.mobile {

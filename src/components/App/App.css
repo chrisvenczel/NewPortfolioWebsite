@@ -66,6 +66,22 @@ a {
 
 }
 
+.button {
+  padding: 0.2em 0.5em;
+  background-color:var(--menu-bar);
+  border-radius: 0.4em;
+}
+
+.button:hover {
+  transform: scale(1.03);
+  text-decoration: none;
+  box-shadow: 0px 0.1em 0.2em rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+  transform: scale(1);
+}
+
 a:hover {
   cursor: pointer;
   text-decoration-line: underline;

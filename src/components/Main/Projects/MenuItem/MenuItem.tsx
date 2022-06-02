@@ -74,10 +74,12 @@ const ProjectMenuItem: FC<MenuItemProps> = (props) => {
                 <h2>{props.title}</h2>
               </Link>
               <p>{props.text}</p>
-              <a>▶ Run Project</a>
+              <Link className={`button`} to={props.pageUrl}>
+                ▶ Run
+              </Link>
               <a
                 onClick={() => setModalOpen(true)}
-                className={styles.moreInfo}
+                className={`${styles.moreInfo} button`}
               >ⓘ More Info</a>
             </td>
           </tr>

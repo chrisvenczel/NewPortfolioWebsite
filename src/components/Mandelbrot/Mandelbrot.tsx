@@ -9,6 +9,10 @@ interface MandelbrotProps {
 // Mandelbrot Set Viewer
 const Mandelbrot: FC<MandelbrotProps> = (props) => {
 
+  useEffect(() => {
+    document.title = "Mandelbrot Set | Chris Venczel";
+  }, []);
+
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | null>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
 
@@ -22,9 +26,9 @@ const Mandelbrot: FC<MandelbrotProps> = (props) => {
     const imageData = ctx.getImageData(0, 0, canvas.current.width, canvas.current.height);
     const data = imageData.data;
     for (var i = 0; i < data.length; i += 4) {
-        data[i]     = 10;     // red
-        data[i + 1] = 10; // green
-        data[i + 2] = 10; // blue
+      data[i] = 10;     // red
+      data[i + 1] = 10; // green
+      data[i + 2] = 10; // blue
     }
     console.log(data, canvas.current, ctx);
     ctx.putImageData(imageData, 0, 0);

@@ -4,3 +4,4 @@ declare module '*.css';
 declare module '*.tsx';
 declare module '*.ts';
 declare module 'typemate';
+declare module 'react-router-hash-link';
