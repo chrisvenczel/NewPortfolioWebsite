@@ -1,4 +1,6 @@
 import React, { FC, useEffect, useRef } from 'react';
+import { HashLink } from "react-router-hash-link";
+
 import styles from './NavBar.module.css';
 
 interface NavBarProps {
@@ -64,10 +66,10 @@ const NavBar: FC<NavBarProps> = (props) => {
       {!props.isMobile && (
         <div className={styles.desktopNav}>
           <div className={styles.container}>
-            <a href="#home" ref={logo} className={styles.logo}><h1>Chris Venczel</h1></a>
-            <a href="#projects" ref={projects} className={styles.navlink}>projects</a>
-            <a href="#about" ref={about} className={styles.navlink}>about</a>
-            <a href="#contact" ref={contact} className={styles.navlink} style={{ marginRight: 0 }}>contact</a>
+            <HashLink ref={logo} to="/#home" className={styles.logo}><h1>Chris Venczel</h1></HashLink>
+            <HashLink ref={projects} to="/#projects" className={styles.navlink}>projects</HashLink>
+            <HashLink ref={about} to="/#about" className={styles.navlink}>about</HashLink>
+            <HashLink ref={contact} to="/#contact" className={styles.navlink} style={{ marginRight: 0 }}>contact</HashLink>
           </div>
         </div>
       )}

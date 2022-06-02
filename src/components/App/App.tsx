@@ -1,11 +1,14 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import TypeMate from 'typemate';
 import { MathJaxContext } from 'better-react-mathjax';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
 // Pages
 import Main from '../Main/Main.tsx';
+import Mandelbrot from '../Mandelbrot/Mandelbrot';
+import ButterflyEffect from '../ButterflyEffect/ButterflyEffect';
 
 const App: FC = () => {
 
@@ -43,7 +46,22 @@ const App: FC = () => {
 
   return (
     <MathJaxContext>
-      <Main isMobile={isMobile} />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<Main isMobile={isMobile} />}
+          />
+          <Route
+            path="/mandelbrot-set"
+            element={<Mandelbrot isMobile={isMobile} />}
+          />
+          <Route
+            path="/butterfly-effect"
+            element={<ButterflyEffect isMobile={isMobile} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </MathJaxContext>
   );
 }

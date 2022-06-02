@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from 'react';
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { Link } from "react-router-dom";
 
 import styles from './Home.module.css';
 

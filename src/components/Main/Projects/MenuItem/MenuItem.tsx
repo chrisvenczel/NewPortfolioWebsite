@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import Modal from "../../../Modal/Modal.tsx";
+import { Link } from "react-router-dom";
 
 import styles from './MenuItem.module.css';
 
@@ -11,9 +12,10 @@ interface MenuItemProps {
   modalTechnicalTxt: string,
   modalImg: string,
   isMobile: boolean,
+  pageUrl: string;
 }
 
-const ProjectMenuItem:FC<MenuItemProps> = (props) => {
+const ProjectMenuItem: FC<MenuItemProps> = (props) => {
 
   const [modalOpen, setModalOpen] = useState(false);
   const table = useRef<HTMLTableElement>(null);
@@ -68,7 +70,9 @@ const ProjectMenuItem:FC<MenuItemProps> = (props) => {
               </div>
             </td>
             <td className={styles.text}>
-              <a><h2>{props.title}</h2></a>
+              <Link to={props.pageUrl}>
+                <h2>{props.title}</h2>
+              </Link>
               <p>{props.text}</p>
               <a>▶ Run Project</a>
               <a
