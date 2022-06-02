@@ -1,18 +1,5 @@
-.container>p {
-  width: 50%;
-}
-
-.container {
-  height: 100%;
-}
-
-.img {
-  width: 45%;
-  object-fit: cover;
-  position: absolute;
-  top: 5%;
-  right: 0;
-  height: 90%;
-  border-radius: 25px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.canvas {
+  height: calc(100% - 10px);
+  width: 100%;
+  background-color: rgb(8, 8, 8);
 }
